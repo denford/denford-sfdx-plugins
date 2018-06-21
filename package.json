@@ -42,6 +42,7 @@
   "license": "MIT",
   "oclif": {
     "commands": "./lib/commands",
+    "bin": "sfdx",
     "devPlugins": [
       "@oclif/plugin-help"
     ]
