@@ -33,7 +33,7 @@ jobs:
 
 workflows:
   version: 2
-  "denford":
+  "denford-sfdx-plugins":
     jobs:
       - node-latest
       - node-8
