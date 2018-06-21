@@ -10,6 +10,8 @@ Install the plugin into your Salesforce CLI using this command:
 $ sfdx plugins:install @denford/denford-sfdx-plugins
 ```
 
+*Note:* this currently doesn't work due to an errro with digital signature - but you can look at the code
+
 You can check a successful installation with `sfdx plugins`. Updates are applied when executing `sfdx plugins:update`.
 
 <!-- install -->
