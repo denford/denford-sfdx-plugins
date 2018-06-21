@@ -26,23 +26,29 @@ Sets the endpoint of a named credential
 
 ```
 USAGE
-  $ denford:envar:namedcredentials
+  $ sfdx denford:envar:namedcredentials
 
 OPTIONS
-  -a, --apiversion=apiversion                      specify the API version (defaults to API version of your DevHub)
-  -h, --help                                       show CLI help
+  -e, --endpoint=endpoint                          endpoint of the named credential
+  -f, --fullname=fullname                          fullname of the named credential
+  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
   -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=apiversion                          override the api version used for api requests made by this command
   --json                                           format output as json
   --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
 
 EXAMPLES
-  $ sfdx muenzpraeger:source:api:set
-       Reading content of package directories
-       45 files have been set to API version 42.0.
+  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialsFullName -e namedCredentialEndpoint
+     Successfully updated NamedCredential: namedCredentialsFullName
 
-  $ sfdx muenzpraeger:source:api:set -a 41.0
-       Reading content of package directories
-       45 files have been set to API version 41.0.
+  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialsFullName -e namedCredentialEndpoint --json
+     {
+       "status": 0,
+       "result": {
+         "fullName": "namedCredentialsFullName",
+         "success": true
+       }
+     }
 ```
 
 
