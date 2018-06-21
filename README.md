@@ -10,8 +10,6 @@ Install the plugin by cloning this repo and linking it using this command:
 $ sfdx plugins:link
 ```
 
-**Note:** this currently doesn't work due to an error with digital signature - but you can look at the code
-
 You can check a successful installation with `sfdx plugins`. Updates are applied when executing `sfdx plugins:update`.
 
 <!-- install -->
