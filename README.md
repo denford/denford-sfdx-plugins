@@ -7,7 +7,7 @@ Plugins for the Salesforce CLI built by Mark Denford.
 Install the plugin by cloning this repo and linking it using this command:
 
 ```sh-session
-$ sfdx plugins:link
+$ sfdx plugins:link <folder>
 ```
 
 You can check a successful installation with `sfdx plugins`. Updates are applied when executing `sfdx plugins:update`.
