@@ -10,7 +10,7 @@ Install the plugin by cloning this repo and linking it using this command:
 $ sfdx plugins:link <folder>
 ```
 
-You can check a successful installation with `sfdx plugins`. Updates are applied when executing `sfdx plugins:update`.
+You can check a successful installation with `sfdx plugins`.
 
 <!-- install -->
 
