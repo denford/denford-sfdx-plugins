@@ -26,7 +26,7 @@ Sets named credentials endpoint
 
 ```
 USAGE
-  $ denford-sfdx-plugins denford:envar:namedcredentials
+  $ sfdx denford:envar:namedcredentials
 
 OPTIONS
   -e, --endpoint=endpoint                          endpoint of the named credential
@@ -59,7 +59,7 @@ Prints a greeting and your org id(s)!
 
 ```
 USAGE
-  $ denford-sfdx-plugins hello:org [FILE]
+  $ sfdx hello:org [FILE]
 
 OPTIONS
   -f, --force                                      example boolean flag
