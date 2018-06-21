@@ -1,4 +1,4 @@
-# sfdx-plugin
+# denford-sfdx-plugins
 
 A plugin for the Salesforce CLI built by Mark Denford.
 
