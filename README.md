@@ -4,10 +4,10 @@ A plugin for the Salesforce CLI built by Mark Denford.
 
 ## Installation into the Salesforce CLI
 
-Install the plugin into your Salesforce CLI using this command:
+Install the plugin by cloning this repo and linking it using this command:
 
 ```sh-session
-$ sfdx plugins:install @denford/denford-sfdx-plugins
+$ sfdx plugins:link
 ```
 
 **Note:** this currently doesn't work due to an error with digital signature - but you can look at the code
