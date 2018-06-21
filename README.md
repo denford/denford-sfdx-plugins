@@ -17,10 +17,9 @@ You can check a successful installation with `sfdx plugins`. Updates are applied
 ## Commands
 
 <!-- commands -->
-* [`denford-sfdx-plugins denford:envar:namedcredentials`](#denford-sfdx-plugins-denfordenvarnamedcredentials)
-* [`denford-sfdx-plugins hello:org [FILE]`](#denford-sfdx-plugins-helloorg-file)
+* [`sfdx denford:envar:namedcredentials`](#sfdx-denfordenvarnamedcredentials)
 
-## `denford-sfdx-plugins denford:envar:namedcredentials`
+## `sfdx denford:envar:namedcredentials`
 
 Sets named credentials endpoint
 
@@ -50,34 +49,4 @@ EXAMPLES
        }
      }
 ```
-
-_See code: [src/commands/denford/envar/namedcredentials.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/denford/envar/namedcredentials.ts)_
-
-## `denford-sfdx-plugins hello:org [FILE]`
-
-Prints a greeting and your org id(s)!
-
-```
-USAGE
-  $ sfdx hello:org [FILE]
-
-OPTIONS
-  -f, --force                                      example boolean flag
-  -n, --name=name                                  name to print
-  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
-  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
-  --apiversion=apiversion                          override the api version used for api requests made by this command
-  --json                                           format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
-
-EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
-  
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-```
-
-_See code: [src/commands/hello/org.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/hello/org.ts)_
 <!-- commandsstop -->
