@@ -1,0 +1,5 @@
+{
+  "commandDescription": "Sets Custom Label value",
+  "fullnameFlagDescription": "fullname of the Custom Label",
+  "valueFlagDescription": "value of the Custom Label"
+}

@@ -5,21 +5,21 @@ core.Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = core.Messages.loadMessages('denford-sfdx-plugins', 'namedcredentials');
+const messages = core.Messages.loadMessages('denford-sfdx-plugins', 'customlabels');
 
-export default class NamedCredentials extends SfdxCommand {
+export default class CustomLabels extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx denford:envar:namedcredentials -u username -f namedCredentialFullName -e namedCredentialEndpoint
-  Successfully updated NamedCredential: namedCredentialFullName
+  `$ sfdx denford:envar:customlabels -u username -f customLabelFullName -l customLabelValue
+  Successfully updated NamedCredential: customLabelFullName
   `,
-  `$ sfdx denford:envar:namedcredentials -u username -f namedCredentialFullName -e namedCredentialEndpoint --json
+  `$ sfdx denford:envar:customLabel -u username -f customLabelFullName -l customLabelValue --json
   {
     "status": 0,
     "result": {
-      "fullName": "namedCredentialFullName",
+      "fullName": "customLabelFullName",
       "success": true
     }
   }
@@ -29,7 +29,7 @@ export default class NamedCredentials extends SfdxCommand {
   protected static flagsConfig = {
     // flag with a value (-n, --name=VALUE)
     fullname: flags.string({char: 'f', description: messages.getMessage('fullnameFlagDescription')}),
-    endpoint: flags.string({char: 'e', description: messages.getMessage('endpointFlagDescription')})
+    labelvalue: flags.string({char: 'l', description: messages.getMessage('valueFlagDescription')})
   };
 
   // Comment this out if your command does not require an org username
@@ -45,40 +45,40 @@ export default class NamedCredentials extends SfdxCommand {
 
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
-    const metadataType = 'NamedCredential';
+    const metadataType = 'CustomLabel';
 
-    // call the metadata api to read the existing named credential
+    // call the metadata api to read the existing custom label
     const fullNames = [ this.flags.fullname ];
     const metadataRead = await conn.metadata.read(metadataType, fullNames);
-    interface NamedCredentialMetadata {
+    interface CustomLabelMetadata {
       fullName: string;
-      label: string;
-      endpoint: string;
-      principalType: string;
-      protocol: string;
-      username: string;
+      categories: string;
+      language: string;
+      protected: string;
+      shortDescription: string;
+      value: string;
     }
-    const metadata = <NamedCredentialMetadata> metadataRead;
+    const metadata = <CustomLabelMetadata> metadataRead;
 
     // todo - test that there were no errors here, that the read worked, that it existed
 
     // update the endpoint to the supplied value
-    metadata.endpoint = this.flags.endpoint;
+    metadata.value = this.flags.labelvalue;
 
     // call the metadata api to update the named credential
     const metadataUpdate = await conn.metadata.update(metadataType, metadata);
-    interface NamedCredentialMetadataUpateResponse {
+    interface CustomLabelMetadataUpateResponse {
       fullName: string;
       success: boolean;
     }
-    const metadataUpdateResponse = <NamedCredentialMetadataUpateResponse> metadataUpdate;
+    const metadataUpdateResponse = <CustomLabelMetadataUpateResponse> metadataUpdate;
 
     // output and wrap-up
     if (metadataUpdateResponse.success === true) {
-      this.ux.log("Successfully updated NamedCredential:", metadataUpdateResponse.fullName);
+      this.ux.log("Successfully updated CustomLabel:", metadataUpdateResponse.fullName);
     }
     else {
-      this.ux.log("Failed to update NamedCredential:", metadataUpdateResponse.fullName);
+      this.ux.log("Failed to update CustomLabel:", metadataUpdateResponse.fullName);
     }
 
     // Return an object to be displayed with --json

@@ -17,20 +17,21 @@ You can check a successful installation with `sfdx plugins`.
 ## Commands
 
 <!-- commands -->
+* [`sfdx denford:envar:customlabels`](#sfdx-denfordenvarcustomlabels)
 * [`sfdx denford:envar:namedcredentials`](#sfdx-denfordenvarnamedcredentials)
 * [`sfdx hello:org [FILE]`](#sfdx-helloorg-file)
 
-## `sfdx denford:envar:namedcredentials`
+## `sfdx denford:envar:customlabels`
 
-Sets named credentials endpoint
+Sets Custom Label value
 
 ```
 USAGE
-  $ sfdx denford:envar:namedcredentials
+  $ sfdx denford:envar:customlabels
 
 OPTIONS
-  -e, --endpoint=endpoint                          endpoint of the named credential
-  -f, --fullname=fullname                          fullname of the named credential
+  -f, --fullname=fullname                          fullname of the Custom Label
+  -l, --labelvalue=labelvalue                      value of the Custom Label
   -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
   -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
   --apiversion=apiversion                          override the api version used for api requests made by this command
@@ -38,14 +39,47 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
 
 EXAMPLES
-  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialsFullName -e namedCredentialEndpoint
-     Successfully updated NamedCredential: namedCredentialsFullName
+  $ sfdx denford:envar:customlabels -u username -f customLabelFullName -l customLabelValue
+     Successfully updated NamedCredential: customLabelFullName
   
-  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialsFullName -e namedCredentialEndpoint --json
+  $ sfdx denford:envar:customLabel -u username -f customLabelFullName -l customLabelValue --json
      {
        "status": 0,
        "result": {
-         "fullName": "namedCredentialsFullName",
+         "fullName": "customLabelFullName",
+         "success": true
+       }
+     }
+```
+
+_See code: [src/commands/denford/envar/customlabels.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/denford/envar/customlabels.ts)_
+
+## `sfdx denford:envar:namedcredentials`
+
+Sets Named Credentials endpoint
+
+```
+USAGE
+  $ sfdx denford:envar:namedcredentials
+
+OPTIONS
+  -e, --endpoint=endpoint                          endpoint of the Named Credential
+  -f, --fullname=fullname                          fullname of the Named Credential
+  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
+  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=apiversion                          override the api version used for api requests made by this command
+  --json                                           format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
+
+EXAMPLES
+  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialFullName -e namedCredentialEndpoint
+     Successfully updated NamedCredential: namedCredentialFullName
+  
+  $ sfdx denford:envar:namedcredentials -u username -f namedCredentialFullName -e namedCredentialEndpoint --json
+     {
+       "status": 0,
+       "result": {
+         "fullName": "namedCredentialFullName",
          "success": true
        }
      }
