@@ -52,7 +52,7 @@ EXAMPLES
      }
 ```
 
-_See code: [src/commands/denford/envar/customlabels.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/denford/envar/customlabels.ts)_
+_See code: [src/commands/denford/envar/customlabels.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.2/src/commands/denford/envar/customlabels.ts)_
 
 ## `sfdx denford:envar:namedcredentials`
 
@@ -85,7 +85,7 @@ EXAMPLES
      }
 ```
 
-_See code: [src/commands/denford/envar/namedcredentials.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/denford/envar/namedcredentials.ts)_
+_See code: [src/commands/denford/envar/namedcredentials.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.2/src/commands/denford/envar/namedcredentials.ts)_
 
 ## `sfdx hello:org [FILE]`
 
@@ -113,5 +113,5 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.1/src/commands/hello/org.ts)_
+_See code: [src/commands/hello/org.ts](https://github.com/denford/denford-sfdx-plugins/blob/v0.0.2/src/commands/hello/org.ts)_
 <!-- commandsstop -->

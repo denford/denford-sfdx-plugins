@@ -1,7 +1,7 @@
 {
   "name": "denford-sfdx-plugins",
   "description": "Plugins for sfdx developed by Mark Denford",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Mark Denford @markdenford",
   "bugs": "https://github.com/denford/denford-sfdx-plugins/issues",
   "dependencies": {
