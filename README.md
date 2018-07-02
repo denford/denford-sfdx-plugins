@@ -40,7 +40,7 @@ OPTIONS
 
 EXAMPLES
   $ sfdx denford:envar:customlabels -u username -f customLabelFullName -l customLabelValue
-     Successfully updated NamedCredential: customLabelFullName
+     Successfully updated Custom Label: customLabelFullName
   
   $ sfdx denford:envar:customLabel -u username -f customLabelFullName -l customLabelValue --json
      {
