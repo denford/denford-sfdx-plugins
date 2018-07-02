@@ -13,7 +13,7 @@ export default class CustomLabels extends SfdxCommand {
 
   public static examples = [
   `$ sfdx denford:envar:customlabels -u username -f customLabelFullName -l customLabelValue
-  Successfully updated NamedCredential: customLabelFullName
+  Successfully updated Custom Labels: customLabelFullName
   `,
   `$ sfdx denford:envar:customLabel -u username -f customLabelFullName -l customLabelValue --json
   {
